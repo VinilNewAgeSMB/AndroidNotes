@@ -47,3 +47,23 @@ You also specify the meta-data for the widget via the ```android:name="android.a
 ```
 The configuration file referred by this metadata contains the configuration settings for the widget. It contains, for example, the update interface, the size and the initial layout of the widget.
 
+# Available views and layouts
+Below Android 3.0 you can use the FrameLayout, LinearLayout and RelativeLayout classes. As views you can use AnalogClock, Button, Chromometer, ImageButton, ImageView, ProgressBar and TextView.
+
+As of Android 3.0 more views are available: GridView, ListView, StackView, ViewFlipper and AdapterViewFlipper. These adapter views require that you define a collection view widget
+
+The only interaction that is possible with the views of a widget is via an OnClickListener event. This OnClickListener can be registered on a widget and is triggered by the user.
+
+## AppWidgetProvider
+Your BroadcastReceiver implementation typically extends the ```AppWidgetProvider``` class.
+
+The ```AppWidgetProvider``` class implements the ```onReceive()``` method, extracts the required information and calls the following widget life cycle methods.
+
+As you can add several instances of a widget to the home screen, you have life cycle methods ```onEnabled()``` and ```onDisabled()``` which are called only for the first instance added and removed to the home screen and others which are called for every instance of your widget.
+
+|Method   |Description   |
+| ------------ | ------------ |
+| onEnabled()  | Called the first time an instance of your widget is added to the home screen.  |
+| onDisabled()  | Called once the last instance of your widget is removed from the home screen. |
+| onUpdate()  | Called for every update of the widget. Contains the ids of appWidgetIds for which an update is needed. Note that this may be all of the AppWidget instances for this provider, or just a subset of them, as stated in the method’s JavaDoc. For example, if more than one widget is added to the home screen, only the last one changes (until reinstall).  |
+| onDeleted() | Widget instance is removed from the home screen. |
