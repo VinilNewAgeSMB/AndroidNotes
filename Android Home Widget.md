@@ -28,9 +28,23 @@ To register a widget, you create a broadcast receiver with an intent filter for 
        <intent-filter >
             <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
        </intent-filter>
-
        <meta-data
           android:name="android.appwidget.provider"
           android:resource="@xml/widget_info" />
 </receiver>
 ```
+The receiver can get a label and icon assigned. These are used in the list of available widgets in the Android launcher.
+
+You also specify the meta-data for the widget via the```xmlandroid:name="android.appwidget.provider"``attribute. 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/widget_layout"
+    android:minHeight="72dp"
+    android:minWidth="146dp"
+    android:updatePeriodMillis="1800000" >
+
+</appwidget-provider>
+```
+The configuration file referred by this metadata contains the configuration settings for the widget. It contains, for example, the update interface, the size and the initial layout of the widget.
+
