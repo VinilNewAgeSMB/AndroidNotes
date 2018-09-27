@@ -35,7 +35,7 @@ To register a widget, you create a broadcast receiver with an intent filter for 
 ```
 The receiver can get a label and icon assigned. These are used in the list of available widgets in the Android launcher.
 
-You also specify the meta-data for the widget via the ```xml android:name="android.appwidget.provider"``` attribute. 
+You also specify the meta-data for the widget via the ```android:name="android.appwidget.provider"``` attribute. 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
