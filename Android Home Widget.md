@@ -43,7 +43,6 @@ You also specify the meta-data for the widget via the```xmlandroid:name="android
     android:minHeight="72dp"
     android:minWidth="146dp"
     android:updatePeriodMillis="1800000" >
-
 </appwidget-provider>
 ```
 The configuration file referred by this metadata contains the configuration settings for the widget. It contains, for example, the update interface, the size and the initial layout of the widget.
