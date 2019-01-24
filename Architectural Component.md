@@ -47,3 +47,39 @@ The data for this app is words, and each word is an Entity. Create a class calle
     Specify the name of the column in the table if you want it to be different from the name of the member variable.
 -   Every field that's stored in the database needs to be either public or have a "getter" method. This sample provides a  `getWord()`  method.
     
+
+
+**What is the DAO?**
+In the DAO (data access object), you specify SQL queries and associate them with method calls.
+The DAO must be an interface or abstract class.
+1.  Create a new Interface and call it  `WordDao`.
+2. Annotate the class with  `@Dao`  to identify it as a DAO class for Room.
+3. Declare a method to insert one word:  `void insert(Word word);`
+4. Annotate the method with  `@Insert`. You don't have to provide any SQL! (There are also  `@Delete`  and  `@Update`  annotations for deleting and updating a row, but you are not using them in this app.)
+5. Declare a method to delete all the words:  `void deleteAll();`.
+6. There is no convenience annotation for deleting multiple entities, so annotate the method with the generic  `@Query`.
+7. Create a method to get all the words:  `getAllWords();`.  
+    Have the method return a  `List`  of  `Words`.  
+    **`List<Word> getAllWords();`**
+
+
+
+
+    import android.arch.persistence.room.Dao;  
+        import android.arch.persistence.room.Insert;  
+        import android.arch.persistence.room.Query;  
+          
+        import java.util.ArrayList;  
+          
+        @Dao  
+        public interface WordDao {  
+          
+            @Insert  
+          void insert(Word word);  
+          
+          @Query("DELETE FROM word_table")  
+            void deleteAll();  
+          
+          @Query("SELECT * FROM word_table order by word ASC")  
+            ArrayList<Word> getAllWords();  
+        }
