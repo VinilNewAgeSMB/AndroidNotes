@@ -11,3 +11,23 @@
 **View Model:** Provides data to the UI. Acts as a communication center between the Repository and the UI.
 
 **LiveData:** A data holder class that can be [observed](https://en.wikipedia.org/wiki/Observer_pattern). Always holds/caches latest version of data. Notifies its observers when the data has changed. `LiveData` is lifecycle aware.
+
+
+    import android.arch.persistence.room.ColumnInfo;  
+    import android.arch.persistence.room.Entity;  
+    import android.arch.persistence.room.PrimaryKey;  
+    import android.support.annotation.NonNull;  
+      
+    @Entity(tableName = "word_table")  
+    public class Word {        
+      @PrimaryKey  
+      @NonNull
+      @ColumnInfo(name = "word")  
+	  private String mWord;        
+      public Word(String mWord) {  
+            this.mWord = mWord;  
+      }        
+      public String getMWord() {  
+            return mWord;  
+      }  
+    }
