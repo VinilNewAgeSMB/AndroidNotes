@@ -12,6 +12,8 @@
 
 **LiveData:** A data holder class that can be [observed](https://en.wikipedia.org/wiki/Observer_pattern). Always holds/caches latest version of data. Notifies its observers when the data has changed. `LiveData` is lifecycle aware.
 
+The data for this app is words, and each word is an Entity. Create a class called Word that describes a word Entity
+
 
     import android.arch.persistence.room.ColumnInfo;  
     import android.arch.persistence.room.Entity;  
