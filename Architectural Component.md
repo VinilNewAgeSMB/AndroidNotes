@@ -65,7 +65,7 @@ The DAO must be an interface or abstract class.
 
 
 
-    import android.arch.persistence.room.Dao;  
+        import android.arch.persistence.room.Dao;  
         import android.arch.persistence.room.Insert;  
         import android.arch.persistence.room.Query;  
           
