@@ -36,6 +36,10 @@ Dependencies are the objects that we need to instantiate inside a class. And we 
 in **dagger2** the class that you want to make a Dependency Provider, you need to annotate it with the **@Module** annotation. And inside the class, you will create methods that will provide the objects (or dependencies). With dagger2 we need to annotate these methods with the **@Provides** annotation.
 
 **Dependency Consumer**
+It is a class where we need the objects. While using dagger we don't even need to get it as an argument. Dagger will provide the dependency, and for this, we just need to annotate the object declaration with **@Inject.**
+
+**Component**
+This is an interface that makes some connection between dependency provider and dependency consumer. For this we need to annotate it with **@Component** and rest of the thing will be done by Dagger.
 
 
 
