@@ -31,6 +31,7 @@ In more simpler words, your class cannot instantiate another class using a new k
 
 **What is Dagger 2?**
 Dagger is a fully static, compile-time dependency injection framework for both Java and Android. It is an adaptation of an earlier version created by Square and now maintained by Google. 
+
 **Dependency Provider**
 Dependencies are the objects that we need to instantiate inside a class. And we learned before that we cannot instantiate a class inside a class. Instead, we need to supply it from outside. So the person who will provide us the dependencies (objects) is called *Dependency Provider*.
 in **dagger2** the class that you want to make a Dependency Provider, you need to annotate it with the **@Module** annotation. And inside the class, you will create methods that will provide the objects (or dependencies). With dagger2 we need to annotate these methods with the **@Provides** annotation.
