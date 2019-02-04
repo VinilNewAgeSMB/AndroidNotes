@@ -42,6 +42,82 @@ It is a class where we need the objects. While using dagger we don't even need t
 **Component**
 This is an interface that makes some connection between dependency provider and dependency consumer. For this we need to annotate it with **@Component** and rest of the thing will be done by Dagger.
 
+Create a class called Database.java. We need to use the data inside the database. It is called the **dependency**. This is just a model class. No annotation is required.
+
+    public class Database {  
+      private String name;        
+      public Database(String name) {  
+            this.name = name;  
+      }        
+      public String getName() {  
+            return name;  
+      }  
+    }
+Now create a provider class called AppModule
+
+    import javax.inject.Singleton;  
+    import dagger.Module;  
+    import dagger.Provides;    
+    
+    @Module  
+    class AppModule {  
+      private Database database;    
+      AppModule(Database database) {  
+          this.database = database;  
+      }    
+      @Provides  
+      @Singleton  public Database getDatabase() {  
+	      return database;  
+      }  
+    }
+Now we create an interface called AppComponent
+
+    import javax.inject.Singleton;    
+    import dagger.Component;  
+      
+    @Singleton  
+    @Component(modules = {AppModule.class})  
+    public interface AppComponent {  
+        void inject(MainActivity activity);  
+    }
+In application class we are building the injection as follows
+
+    import android.app.Application;  
+      
+    public class MyApplication extends Application {    
+    private AppComponent mAppComponent;  
+      
+      @Override  
+      public void onCreate() {  
+	      super.onCreate();  
+	      Database database = new Database("My DB");  
+	      mAppComponent = DaggerAppComponent.builder()  
+                    .appModule(new AppModule(database))  
+                    .build();  
+      }  
+      
+      public AppComponent getNetComponent() {  
+	      return mAppComponent;  
+      }  
+    }
+and we can inject the dependency as follows
+
+    import android.support.v7.app.AppCompatActivity;  
+    import android.os.Bundle;  
+    import android.util.Log;        
+    import javax.inject.Inject;  
+      
+    public class MainActivity extends AppCompatActivity {        
+      @Inject Database database;  
+      @Override  
+      protected void onCreate(Bundle savedInstanceState) {  
+	      super.onCreate(savedInstanceState);  
+	      setContentView(R.layout.activity_main);  
+      
+	      ((MyApplication) getApplication()).getNetComponent().inject(this);  
+	      Log.e("database",database.getName());  
+      }  
+    }
 
 
 
