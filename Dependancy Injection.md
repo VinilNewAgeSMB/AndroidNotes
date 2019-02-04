@@ -26,3 +26,11 @@ Instead of using new to instantiate the Database inside User’s constructor we 
     }
 So this is what we call as **Dependency Injection**. Means supplying the dependencies from outside the class. And more specifically for the above code, we can consider it as a *Constructor Injection*.
 
+
+
+
+
+
+
+
+Reference : https://www.simplifiedcoding.net/android-dependency-injection/
