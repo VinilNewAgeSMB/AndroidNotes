@@ -41,3 +41,17 @@ ___
     A -> B (Here old instance gets called and intent data route through onNewIntent() callback)
     
 ***SingleInstance*** : This is very special launch mode and only used in the applications that has only one activity. It is similar to singleTask except that no other activities will be created in the same task. Any other activity started from here will create in a new task. `<activity android:launchMode=”singleInstance”/>`
+
+
+    A -> B -> C
+    Activity D launched with launchMode=”singleInstance”
+    Task1 : A -> B -> C
+    Task2 : D (here D will be in different task)
+
+___
+
+    Task1 : A -> B -> C
+    Task2 : D
+    Activity D launched with launchMode=”singleInstance”
+    Task1 : A -> B -> C
+    Task2 : D (Here old instance gets called and intent data route through onNewIntent() callback)
