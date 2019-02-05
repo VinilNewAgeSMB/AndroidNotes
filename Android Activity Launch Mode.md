@@ -25,6 +25,8 @@ There are four launch modes for activity.They are:
     A -> B -> C
     Activity D launched with launchMode=”singleTop”
     A -> B -> C -> D (Here D launch as usual)
+___
+    A -> B -> C -> D (D launched with launchMode=”singleTop”)
     Activity D again launched with launchMode=”singleTop”
     A -> B -> C -> D (Here old instance gets called and intent data route through onNewIntent() callback)  
 
@@ -34,7 +36,7 @@ There are four launch modes for activity.They are:
     Activity D launched with launchMode=”singleTask”
     A -> B -> C -> D (Here D launch as usual)
 ___
-    A -> B -> C (B launched with launchMode=”singleTask”)
+    A -> B -> C -> D (B launched with launchMode=”singleTask”)
     Activity B again launched with launchMode=”singleTask”
     A -> B (Here old instance gets called and intent data route through onNewIntent() callback)
     
