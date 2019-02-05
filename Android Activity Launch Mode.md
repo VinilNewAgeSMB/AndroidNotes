@@ -32,6 +32,7 @@ There are four launch modes for activity.They are:
 
 > Activity Stack after : A -> B -> C -> D (Here D launch as usual)
 
+
 > Activity Stack before : A -> B -> C -> D
 
 > Launching activity D with launchMode=”singleTop”
@@ -47,6 +48,7 @@ There are four launch modes for activity.They are:
 > Launching activity D with launchMode=”singleTask”
 
 > Activity Stack after : A -> B -> C -> D (Here D launch as usual)
+
 
 > Activity Stack before : A -> B -> C -> D
 
