@@ -1,6 +1,8 @@
+
 ## Android Activity Launch Mode
 
 Launch mode is an instruction for Android OS which specifies how the activity should be launched. It instructs how any new activity should be associated with the current task and Back Stack.
+
     **Tasks** : A task is a collection of activities that users interact with
     **Back Stack** : Activities are arranged with the order in which each activity is opened. This maintained stack called Back Stack.
 
