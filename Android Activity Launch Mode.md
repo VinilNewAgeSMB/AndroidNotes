@@ -17,15 +17,19 @@ There are four launch modes for activity.They are:
 ***Standard*** : This is the default launch mode of an activity. It creates a new instance of an activity in the task from which it was started. You can create the same activity multiple times in the same task as well as in different tasks.
 
 > Activity Stack before : A -> B -> C -> D 
+
 > Launching activity B with launchMode=”standard”
+
 > Activity Stack after : A -> B -> C -> D -> B
 
     <activity android:launchMode=”standard”/>
 
 ***SingleTop*** : If an instance of activity already exists at the top of the current task, a new instance will not be created and android system will pass the intent information through onNewIntent(). If an instance is not present on top of task then new instance will be created. In this launch mode you can create multiple instance of the same activity in the same task or in different tasks only if the same instance does not already exist at the top of stack.
 
-> Activity Stack before : A -> B -> C 
+> Activity Stack before : A -> B -> C
+
 > Launching activity D with launchMode=”singleTop” 
+
 > Activity Stack after : A -> B -> C -> D (Here D launch as usual)
 
 > Activity Stack before : A -> B -> C -> D
