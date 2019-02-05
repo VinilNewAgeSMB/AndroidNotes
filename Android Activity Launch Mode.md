@@ -64,10 +64,10 @@ ___
 ### Intent Flags
 Android also provides Activity flags by which you can change the default behavior of Activity association with Tasks while starting it via startActivity() method. These flags values can be pass through Intent extra data.
 
-FLAG_ACTIVITY_NEW_TASK : This flag works similar to “launchMode = singleTask”.
+**FLAG_ACTIVITY_NEW_TASK** : This flag works similar to “launchMode = singleTask”.
 
-FLAG_ACTIVITY_CLEAR_TASK : Any existing task that would be associated with the activity to be cleared before the activity is started.
+**FLAG_ACTIVITY_CLEAR_TASK** : Any existing task that would be associated with the activity to be cleared before the activity is started.
 
-FLAG_ACTIVITY_CLEAR_TOP : The activity being launched is already running in the current task, then instead of launching a new instance of that activity, all of the other activities on top of it will be closed and Intent will be delivered to the as a new Intent.
+**FLAG_ACTIVITY_CLEAR_TOP** : The activity being launched is already running in the current task, then instead of launching a new instance of that activity, all of the other activities on top of it will be closed and Intent will be delivered to the as a new Intent.
 
-FLAG_ACTIVITY_SINGLE_TOP : This flag works similar to “launchMode = singleTop”.
+**FLAG_ACTIVITY_SINGLE_TOP** : This flag works similar to “launchMode = singleTop”.
