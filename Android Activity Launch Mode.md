@@ -79,7 +79,13 @@ A thread, in the context of Java, is the path followed when executing a program.
 We use Threads to make Java application faster by doing multiple things at same time. Thread helps you to achieve parallelism in Java program. Since CPU is very fast and even contains multiple cores, just one thread is not able to take advantage of all the cores. By using multiple threads, you can take full advantage of multiple cores by serving more clients and serving them faster. Multi-threading is one way to exploiting huge computing power of CPU in Java application. Thread is also using for doing multiple tasks simultaneously. If you have lot of tasks to be done and If you are doing all this task in one thread, they would be executed sequentially. By using multiple threads in Java you can execute each of this task independently and parallelly. 
 
 ### Multithreading
-Multithreading in java is a process of executing multiple threads simultaneously. Java application contains at least one thread, that is called main thread which executes your main method. Instead of that you can also add new user threads to make your application faster and more efficient and it's called as multi-threading. The following are the reasons and scenarios to use multiple threads in Java.
+Multithreading in java is a process of executing multiple threads simultaneously. Java application contains at least one thread, that is called main thread which executes your main method. Instead of that you can also add new user threads to make your application faster and more efficient and it's called as multi-threading. The following are the reasons and scenarios to use multiple threads in Java. Multithreading is mostly used in games, animation, etc.
+
+> Multiprocessing and multi-threading, both are used to achieve
+> multitasking. However, we use multi-threading than multiprocessing
+> because threads use a shared memory area. They don't allocate separate
+> memory area so saves memory, and context-switching between the threads
+> takes less time than process. 
 
  - To make a task run parallel to another task : By Using multi-threading we can execute multiple task at a time parallelly.
  - To take full advantage of CPU power : Another common reason for using multiple threads in Java is to improve throughput of the application by utilizing full CPU power.
