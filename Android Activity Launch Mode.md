@@ -73,7 +73,6 @@ Android also provides Activity flags by which you can change the default behavio
 **FLAG_ACTIVITY_SINGLE_TOP** : This flag works similar to “launchMode = singleTop”.
 
 
-###Thread 
-
+### Thread 
 We use Threads to make Java application faster by doing multiple things at same time. Thread helps you to achieve parallelism in Java program. Since CPU is very fast and even contains multiple cores, just one thread is not able to take advantage of all the cores. By using multiple threads, you can take full advantage of multiple cores by serving more clients and serving them faster. Multi-threading is one way to exploiting huge computing power of CPU in Java application. Thread is also using for doing multiple tasks simultaneously. If you have lot of tasks to be done and If you are doing all this task in one thread, they would be executed sequentially. By using multiple threads in Java you can execute each of this task independently and parallelly. 
 
