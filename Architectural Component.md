@@ -1,3 +1,5 @@
+### Room
+
 **Entity:** Is an annotated class that describes a database table.
 
 **SQLite database:** On the device, data is stored in an SQLite database.
