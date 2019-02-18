@@ -53,11 +53,11 @@ Here one constructor called from another constructor of the same class using  `t
 ## Data Classes
 We frequently create classes whose main purpose is to hold data. In such a class some standard functionality and utility functions are often mechanically derivable from the data. In Kotlin, this is called a data class and is marked as `data`.
 
-## Sealed Classes
-Sealed classes are used for representing restricted class hierarchies, when a value can have one of the types from a limited set, but cannot have any other type.They are, in a sense, an extension of enum classes: the set of values for an enum type is also restricted, but each enum constant exists only as a single instance, whereas a subclass of a sealed class can have multiple instances which can contain state. To declare a sealed class, you put the sealed modifier before the name of the class. A sealed class can have subclasses, but all of them must be declared in the same file as the sealed class itself. A sealed class is abstract by itself, it cannot be instantiated directly and can have abstract members.
-
 To ensure consistency and meaningful behavior of the generated code, data classes have to fulfill the following requirements:
 -   The primary constructor needs to have at least one parameter;
 -   All primary constructor parameters need to be marked as  `val`  or  `var`;
 -   Data classes cannot be abstract, open, sealed or inner;
 -   (before 1.1) Data classes may only implement interfaces.
+
+## Sealed Classes
+Sealed classes are used for representing restricted class hierarchies, when a value can have one of the types from a limited set, but cannot have any other type.They are, in a sense, an extension of enum classes: the set of values for an enum type is also restricted, but each enum constant exists only as a single instance, whereas a subclass of a sealed class can have multiple instances which can contain state. To declare a sealed class, you put the sealed modifier before the name of the class. A sealed class can have subclasses, but all of them must be declared in the same file as the sealed class itself. A sealed class is abstract by itself, it cannot be instantiated directly and can have abstract members.
