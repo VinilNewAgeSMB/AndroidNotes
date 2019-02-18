@@ -1,11 +1,11 @@
-### Kotlin Constructors
+## Kotlin Constructors
 Constructors is a special member function that is called when an object is instantiated (Created). However, how they work in Kotlin is slightly different. 
 
 In Kotlin, there are two constructors:
  - Primary constructor - concise way to initialize a class
  - Secondary constructor - allows you to put additional initialization
    logic
-#### Primary Constructor
+### Primary Constructor
 The primary constructor is part of the class header.
 
     class Person(val firstName: String, var age: Int) {
@@ -17,7 +17,7 @@ Here the block of code surrounded by parentheses is the primary constructor.
 > any code. So in that case we are using the **initializer block/init
 > block** for the  initilization of  code (not only code to initialize
 > properties).
-#### Secondary Constructor
+### Secondary Constructor
 A class can also contain one or more secondary constructors. They are created using `constructor` keyword.
 
 Secondary constructors are not that common in Kotlin. The most common use of secondary constructor comes up when you need to extend a class that provides multiple constructors that initialize the class in different ways.
@@ -49,3 +49,7 @@ Here, constructors of the derived class `AuthLog` calls the corresponding constr
         }
     }
 Here one constructor called from another constructor of the same class using  `this()`
+
+
+## Sealed Classes
+Sealed classes are used for representing restricted class hierarchies, when a value can have one of the types from a limited set, but cannot have any other type.They are, in a sense, an extension of enum classes: the set of values for an enum type is also restricted, but each enum constant exists only as a single instance, whereas a subclass of a sealed class can have multiple instances which can contain state.
